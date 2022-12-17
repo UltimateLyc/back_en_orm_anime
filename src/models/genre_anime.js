@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('genre_anime', {
+import { sequelize } from '../database/database.js'
+import { DataTypes } from 'sequelize'
+
+export const Genre_Anime = sequelize.define('genre_anime', {
     id_anime: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -37,5 +38,4 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
     ]
-  });
-};
+  })
