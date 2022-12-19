@@ -33,3 +33,12 @@ export const Anime = sequelize.define('anime', {
     ]
   })
 
+Anime.hasMany(Genre_Anime,{
+  foreignKey: 'id_anime',
+  sourceKey: 'id'
+})
+
+Genre_Anime.belongsTo(Anime,{
+  foreignKey:'id_anime',
+  target: 'id'
+})

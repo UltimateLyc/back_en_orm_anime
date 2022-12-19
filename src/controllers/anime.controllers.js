@@ -1,9 +1,9 @@
 import { Anime } from "../models/anime.js"
-import { Genre } from "../models/genre.js"
+import { Genre_Anime } from "../models/genre_anime.js"
 
 export const getAnime = async (req, res) => {
     try {
-        const response = await Anime.findAll()
+        const response = await Anime.findAll({include: Genre_Anime})
         res.status(200).json(response)
     } catch (error) {
         res.status(500).json({'error': error.message})
